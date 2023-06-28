@@ -1,0 +1,78 @@
+zadania 1
+class Cook:
+    Cook_Post = {
+        "billet": 1,
+        "pastry": 2,
+        "senior cook": 3,
+        "chef sous chef": 4,
+        "chef": 5
+    }
+    Cook_specialization = {
+        "pastry_chef" : ["",""],
+        "cook-technologist" : ["",""]
+    }
+
+    def __init__(self, name, specialization, post, salary):
+        self.__name = name
+        self.__specialization = specialization
+        self.__post = post
+        self.__salary = salary
+
+    def get_name(self):
+        return self.__name
+
+    def set_name(self):
+        self.__name = name
+
+    def get_specialization(self):
+        return self.__specialization
+
+    def set_specialization(self):
+        self.__specialization = specialization
+
+    def get_post(self):
+        return self.__post
+
+    def set_post(self):
+        self.__post = post
+
+    def get_salary(self):
+        return self.__salary
+
+    def set_salary(self):
+        self.__salary = salary
+
+    def info_cook(self):
+        print(f"имя повара>>{self.__name}\nспециализация повара>>{self.__specialization}\nдолжность повара>>{self.__post}\nзарплата>>{self.__salary}")
+
+    def __eq__(self,other):
+        if self.__post == other.get_post():
+            return True
+        else:
+            return False
+
+    def __ne__(self,other):
+        if self.__post != other.get_post():
+            return True
+        else:
+            return False
+
+    def __lt__(self,other):
+        if self.__post < other.get_post():
+            return True
+        else:
+            return False
+
+    def __gt__(self,other):
+        if self.__post > other.get_post():
+            return True
+        else:
+            return False
+
+
+s = Cook("Ashot","pastry_chef",Cook.Cook_Post['senior cook'],70000)
+s1 = Cook("Ara","cook-technologist",Cook.Cook_Post['chef'],100000)
+print(s < s1)
+s.info_cook()
+s1.info_cook()
+print(s.get_specialization())
